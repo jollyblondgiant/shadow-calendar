@@ -1,6 +1,7 @@
 ;; shadow-cljs configuration
 {:source-paths
- ["src"]
+ ["src/main"
+  "src/js"]
 
  :dependencies [[binaryage/devtools "0.9.7"]
                 [reagent "0.8.0-alpha2"]]
@@ -12,7 +13,8 @@
  {:app {:target :browser
         :output-dir "public/js/compiled"
         :asset-path "/js/compiled"
-
+        :foreign-libs [{:file "src"
+                        :module-type :es6}]
         :modules
         {:main
          {:entries [shadow-calendar.core]}}
@@ -24,6 +26,6 @@
          :after-load shadow-calendar.core/start
          ;; serve the public directory over http at port 8700
          :http-root    "public"
-         :http-port    8700
+         :http-port    1337
          :preloads     [devtools.preload]}
         }}}

@@ -9,11 +9,17 @@
   "dependencies": {
     "@fullcalendar/core": "^4.3.1",
     "@fullcalendar/daygrid": "^4.3.0",
+    "@fullcalendar/interaction": "^4.3.0",
     "@fullcalendar/react": "^4.3.0",
     "@fullcalendar/resource-timegrid": "^4.3.0",
+    "@fullcalendar/resource-timeline": "^4.3.0",
     "create-react-class": "^15.6.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "shadow-cljs": "^2.0.80"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5"
   }
 }
