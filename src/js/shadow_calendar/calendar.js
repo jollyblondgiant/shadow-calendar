@@ -1,5 +1,10 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Calendar = void 0;
+
 var _react = _interopRequireDefault(require("react"));
 
 var _react2 = _interopRequireDefault(require("@fullcalendar/react"));
@@ -59,14 +64,9 @@ function (_React$Component) {
     _defineProperty(_assertThisInitialized(_this), "calendarComponentRef", _react.default.createRef());
 
     _defineProperty(_assertThisInitialized(_this), "state", {
-      calendarEvents: [//takes a vector of maps
-      //assoc event w/ resource: match event.resourceId to resource.id
-      //assoc event w/ resources: match event.resourceIds to resource.id
-      //event.resourceIds is a vector of strings
-      {
+      calendarEvents: [{
         title: "Closing",
         start: new Date(),
-        // resourceId: "roomA"
         resourceIds: ["roomA", "roomB"],
         editable: true
       }],
@@ -135,8 +135,5 @@ function (_React$Component) {
   return Calendar;
 }(_react.default.Component);
 
+exports.Calendar = Calendar;
 ;
-
-calendar = function calendar() {
-  return _react.default.createElement(Calendar, null);
-};

@@ -2,7 +2,7 @@
   (:require [reagent.core :as reagent :refer [atom]]
             ["./hello" :as hello]
             ["./bar" :refer (myComponent)]
-            ["./calendar" :as Calendar]))
+            ["./calendar" :refer (Calendar)]))
 
 ;; define your app data so that it doesn't get over-written on reload
 
@@ -12,12 +12,14 @@
 ;;  (.hello/sayHello "Hello")
   [:div
    [:h1 (:text @app-state)]
-   ;;[calendar]
+   [myComponent]
    (reagent/create-element myComponent)
+   [:div {:id "calendar"}]
+   ;; (reagent/render-component Calendar  (.getElementById js/document "calendar"))
    [:h3 "Edit this and watch it change!"]])
 
 (defn start []
-  (reagent/render [js/Calendar]
+  (reagent/render [:> Calendar]
                             (. js/document (getElementById "app"))))
 
 (defn ^:export init []
